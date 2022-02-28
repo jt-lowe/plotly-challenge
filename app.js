@@ -19,7 +19,7 @@
 
 function init(){
     //Read in JSON file
-    d3.json("../../data/samples.json").then((data) => {
+    d3.json("samples.json").then((data) => {
         //Define the dropdown selector options
         options=data.names;
 
@@ -40,7 +40,7 @@ function init(){
 
 function demoInfo(selection){
     // Read in JSON data
-    d3.json("../../data/samples.json").then((data) => {
+    d3.json("samples.json").then((data) => {
 
             //Hold the metadata
             var meta = data.metadata;
@@ -61,7 +61,7 @@ function demoInfo(selection){
 function createCharts(selection){
     
     //Read in JSON data
-    d3.json("../../data/samples.json").then((data) => {
+    d3.json("samples.json").then((data) => {
 
         //Hold the samples data for the bar and the bubble charts
         var samps = data.samples;
@@ -142,7 +142,7 @@ function createCharts(selection){
 
 //Define a function to run the above on change of the dropwdown value
 function optionChanged(selection){
-    d3.json("../../data/samples.json").then((data) => {
+    d3.json("samples.json").then((data) => {
             demoInfo(selection);
             createCharts(selection)
     });
